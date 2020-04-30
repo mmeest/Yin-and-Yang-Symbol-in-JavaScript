@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YIN and YANG</title>
+    <style>
+        body {
+            background-color: #111f25;
+            font-family: Arial, Helvetica, sans-serif
+        }
+        #container {
+            margin: 15px;
+            background-color: #255252;
+        }
+        #header {
+            background-color: #6da1d1;
+            color: white;
+            text-align: center;
+            padding: 1px;
+        }
+        #menu {
+            background-color: #255252;
+            color: white;
+            width: 20%;
+            float: left;
+        }
+        #body {
+            background-color: rgb(212, 222, 235);
+            width: 80%;
+            float: right;
+        }
+        #footer {
+            clear: both;
+            margin-top: 5px;
+            padding: 4px;
+            background-color: #6da1d1;
+            color: white;
+        }
+        #myCanvas {
+            margin-top: 5px;
+            background-color: #72d899;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header"><h1>Yin and Yong Symbol in JavaScript</h1></div>
+        <div id="menu">
+            <ul>
+                <li>Symbol size can be altered by changeing variable x value(radius)</li>
+                <li>Canvas size(400 x 400) can be altered. Symbol stays in center</li>
+            </ul>
+        </div>
+        <div id="body">
+            <p align="center">
+                <canvas id="myCanvas" width="400" height="400" align="center"></canvas>
+            </p>
+            <script>
+                var canvas = document.getElementById('myCanvas');
+                var context = canvas.getContext('2d');
+                var x = 100;        // Symbol radius
+                var canvasWidth = canvas.scrollWidth;
+                var canvasHeight = canvas.scrollHeight;
+
+                context.beginPath(); // Big Black circle
+                context.arc(canvasWidth / 2, canvasHeight / 2, x, 0, 2 * Math.PI, false);
+                context.fillStyle = 'black';
+                context.fill();
+
+                context.beginPath(); // White elements
+                context.arc(canvasWidth / 2, canvasHeight / 2 - x / 2, x / 2, 1.5 * Math.PI, 0.5 * Math.PI, false);
+                context.arc(canvasWidth / 2, canvasHeight / 2 + x / 2, x / 2, 1.5 * Math.PI, 0.5 * Math.PI, true);
+                context.arc(canvasWidth / 2, canvasHeight / 2, x, 0.5 * Math.PI, 1.5 * Math.PI, false);
+                context.arc(canvasWidth / 2, canvasHeight / 2 + x / 2, x / 10, 0, 2 * Math.PI, false);        
+                context.fillStyle = 'white';
+                context.fill();
+
+                context.beginPath(); // Small black circle
+                context.arc(canvasWidth / 2, canvasHeight / 2 - x / 2, x / 10, 0, 2 * Math.PI, false);
+                context.fillStyle = 'black';
+                context.fill();
+
+                context.beginPath(); // Black border line   
+                context.arc(canvasWidth / 2, canvasHeight / 2, x, 0, 2 * Math.PI, false);
+                context.lineWidth = 2;
+                context.strokeStyle = 'black';
+                context.stroke();
+            </script>
+        </div>
+        <div id="footer">Copyright &copy; Martin 2020</div>
+    </div>
+</body>
+</html>
