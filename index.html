@@ -41,6 +41,9 @@
             margin-top: 5px;
             background-color: #72d899;
         }
+        button {
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -48,8 +51,23 @@
         <div id="header"><h1>Yin and Yong Symbol in JavaScript</h1></div>
         <div id="menu">
             <ul>
-                <li>Symbol size can be altered by changeing variable x value(radius)</li>
-                <li>Canvas size(400 x 400) can be altered. Symbol stays in center</li>
+                <li>Symbol size can be altered by changeing variable x value(radius)</li><br>
+                <form>
+                    <label for="radius">Symbol radius:</label>
+                    <input type="text" id="radius">
+                    <button type="button" value="Submit" onclick="changeRadius()">Submit</button>
+                </form><br>
+                <li>Canvas size(400 x 400) on HTML can be altered. Symbol stays in center</li><br>
+                <!-- <form>
+                    <label for="cwidth">Canvas width:</label>
+                    <input type="text" id="cwidth">
+                    <button type="button" value="Submit" onclick="changeWidth()">Submit</button>
+                </form><br>
+                <form>
+                    <label for="cheight">Canvas height:</label>
+                    <input type="text" id="cheight">
+                    <button type="button" value="Submit" onclick="changeHeight()">Submit</button>
+                </form> -->
             </ul>
         </div>
         <div id="body">
@@ -62,6 +80,8 @@
                 var x = 100;        // Symbol radius
                 var canvasWidth = canvas.scrollWidth;
                 var canvasHeight = canvas.scrollHeight;
+
+                function createSymbol(x, canvasWidth, canvasHeight){
 
                 context.beginPath(); // Big Black circle
                 context.arc(canvasWidth / 2, canvasHeight / 2, x, 0, 2 * Math.PI, false);
@@ -86,9 +106,35 @@
                 context.lineWidth = 2;
                 context.strokeStyle = 'black';
                 context.stroke();
+                }
+                createSymbol(x, canvasWidth, canvasHeight);
+
+
+                // function for resizing button
+                function changeRadius() {
+                canvas = document.getElementById("myCanvas");
+                ctx = canvas.getContext("2d");
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                var a = document.getElementById("radius").value;
+                createSymbol(a, canvasWidth, canvasHeight);
+                }
+
+                /* function changeWidth() {
+                    var b = document.getElementById("cwidth").value;
+                    createSymbol(x, b, canvasHeight);
+                }
+
+                function changeHeight() {
+                    var c = document.getElementById("cheight").value;
+                    createSymbol(x, canvasWidth, c);
+                } */
             </script>
         </div>
         <div id="footer">Copyright &copy; Martin 2020</div>
     </div>
+
+    <script>
+        
+    </script>
 </body>
 </html>
