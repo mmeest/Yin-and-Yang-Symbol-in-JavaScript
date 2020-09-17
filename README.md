@@ -1,4 +1,4 @@
-<img src="Screenshot.jpg" width="400px">
+<img src="Screenshot.jpg" width="500px">
 
 # Yin and Yang Symbol in JavaScript
 using JavaScript to draw Yin and Yang symbol
