@@ -4,6 +4,6 @@
 using JavaScript to draw Yin and Yang symbol
 
 # Features:
-* Compact HTML page with CSS and JS to draw Yin and Yang symbol
+* Compact HTML page with CSS, JS and comments to draw Yin and Yang symbol
 * User input for size of the symbol
 
