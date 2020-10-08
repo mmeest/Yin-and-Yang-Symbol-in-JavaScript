@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=slice&color=auto&height=130&section=header&text=Yin%and%Yang&fontSize=40&fontAlign=80)
+![header](https://capsule-render.vercel.app/api?type=slice&color=auto&height=130&section=header&text=Yin-and-Yang&fontSize=40&fontAlign=80)
 
 <img src="Screenshot.jpg" width="500px">
 
